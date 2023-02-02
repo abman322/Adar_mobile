@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1061992511910",
+    "project_id": "adar-mobile",
+    "storage_bucket": "adar-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1061992511910:android:034c360fd700eeba6f3767",
+        "android_client_info": {
+          "package_name": "com.example.adar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1061992511910-52udco3qs5pvedjtio4ibjje853hadq9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC01Yz7wVETI82Ufo4KUMso7lCkJzQVtUE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1061992511910-52udco3qs5pvedjtio4ibjje853hadq9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
