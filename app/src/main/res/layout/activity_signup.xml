@@ -56,6 +56,7 @@
             android:id="@+id/signupEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FFFFFF"
             android:hint="Enter your email"
             android:inputType="textEmailAddress">
 
@@ -78,6 +79,7 @@
             android:id="@+id/signupPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FFFFFF"
             android:hint="Enter your password"
             android:inputType="textPassword">
 
@@ -122,6 +124,7 @@
             />
 
         <TextView
+            android:id="@+id/signupToLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Joined us before? Login"
