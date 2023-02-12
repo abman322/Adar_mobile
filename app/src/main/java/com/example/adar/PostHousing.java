@@ -23,7 +23,7 @@ import java.util.Map;
 
 public class PostHousing extends AppCompatActivity {
 
-    private EditText mPostHousingCity, mPostHousingCountry, mPostHousingPrice, mPostHousingImageURL, mPostHousingDescription;
+    private EditText mPostHousingCity, mPostHousingCountry, mPostHousingPrice, mPostHousingImageURL, mPostHousingDescription, mPostHousingPhone;
     private Button mPostHousingSubmit;
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
@@ -42,6 +42,7 @@ public class PostHousing extends AppCompatActivity {
         mPostHousingImageURL = findViewById(R.id.postHousingImageURL);
         mPostHousingDescription = findViewById(R.id.postHousingDescription);
         mPostHousingSubmit = findViewById(R.id.postHousingSubmit);
+        mPostHousingPhone = findViewById(R.id.postHousingPhone);
 
         mAuth = FirebaseAuth.getInstance();
         mStore = FirebaseFirestore.getInstance();
@@ -55,6 +56,7 @@ public class PostHousing extends AppCompatActivity {
                 String price = mPostHousingPrice.getText().toString();
                 String imageUrl = mPostHousingImageURL.getText().toString();
                 String description = mPostHousingDescription.getText().toString();
+                String phone = mPostHousingPhone.getText().toString();
 
                 if (city.isEmpty() || country.isEmpty() || price.isEmpty() || imageUrl.isEmpty() || description.isEmpty()){
                     Toast.makeText(getApplicationContext(), "All fields are required.", Toast.LENGTH_SHORT).show();
@@ -66,6 +68,7 @@ public class PostHousing extends AppCompatActivity {
                     Home.put("price",price);
                     Home.put("imageUrl",imageUrl);
                     Home.put("description",description);
+                    Home.put("phone",phone);
 
                     documentReference.set(Home).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override

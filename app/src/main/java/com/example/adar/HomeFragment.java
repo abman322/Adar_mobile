@@ -54,7 +54,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        Query query = mStore.collection("houses").document(mUser.getUid()).collection("myHomes");
+        Query query = mStore.collection("houses").getFirestore().collectionGroup("myHomes");
         FirestoreRecyclerOptions<HouseModel> allMyHouses = new FirestoreRecyclerOptions.Builder<HouseModel>().setQuery(query,HouseModel.class).build();
 
         houseAdapter = new FirestoreRecyclerAdapter<HouseModel, houseViewHolder>(allMyHouses) {
