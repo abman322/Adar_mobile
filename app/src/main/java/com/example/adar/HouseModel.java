@@ -2,18 +2,19 @@ package com.example.adar;
 
 public class HouseModel {
 
-    private String city, country, price, imageUrl, description;
+    private String city, country, price, imageUrl, description, phone;
 
     public HouseModel(){
 
     }
 
-    public HouseModel(String city, String country, String price, String imageUrl, String description){
+    public HouseModel(String city, String country, String price, String imageUrl, String description, String phone){
         this.city = city;
         this.country = country;
         this.price = price;
         this.imageUrl = imageUrl;
         this.description = description;
+        this.phone = phone;
     }
 
     public String getCity(){
@@ -30,6 +31,9 @@ public class HouseModel {
     }
     public String getDescription() {
         return description;
+    }
+    public String getPhone() {
+        return phone;
     }
 
     public void setCity(String city) {
@@ -50,5 +54,9 @@ public class HouseModel {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }
