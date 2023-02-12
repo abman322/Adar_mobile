@@ -16,7 +16,6 @@ public class HomePage extends AppCompatActivity {
     HomeFragment homeFragment = new HomeFragment();
     ProfileFragment profileFragment = new ProfileFragment();
     MyHomesFragment myHomesFragment = new MyHomesFragment();
-    RentedHomesFragment rentedHomesFragment = new RentedHomesFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +34,6 @@ public class HomePage extends AppCompatActivity {
                switch (item.getItemId()){
                    case R.id.home:
                        getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
-                       return true;
-                   case R.id.rentedHomes:
-                       getSupportFragmentManager().beginTransaction().replace(R.id.container, rentedHomesFragment).commit();
                        return true;
                    case R.id.yourHomes:
                        getSupportFragmentManager().beginTransaction().replace(R.id.container, myHomesFragment).commit();
