@@ -65,6 +65,16 @@ public class HomeFragment extends Fragment {
                 holder.mHouseCardPrice.setText("$"+model.getPrice()+" / night");
                 Picasso.get().load(model.getImageUrl()).into(holder.mHouseCardImage);
 
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        Intent intent = new Intent(view.getContext(),HouseDetails.class);
+                        view.getContext().startActivity(intent);
+
+                    }
+                });
+
             }
 
             @NonNull
