@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "1061992511910",
-    "project_id": "adar-mobile",
-    "storage_bucket": "adar-mobile.appspot.com"
+    "project_number": "86146154471",
+    "project_id": "adar-52016",
+    "storage_bucket": "adar-52016.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1061992511910:android:034c360fd700eeba6f3767",
+        "mobilesdk_app_id": "1:86146154471:android:4d03274a93600a82490742",
         "android_client_info": {
           "package_name": "com.example.adar"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1061992511910-52udco3qs5pvedjtio4ibjje853hadq9.apps.googleusercontent.com",
+          "client_id": "86146154471-dmf9ua5cavo0eneih04mi3pmuc47omu7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC01Yz7wVETI82Ufo4KUMso7lCkJzQVtUE"
+          "current_key": "AIzaSyDy6ktxHYmtcZuKvYTFfY_fQ49kiZWcehc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1061992511910-52udco3qs5pvedjtio4ibjje853hadq9.apps.googleusercontent.com",
+              "client_id": "86146154471-dmf9ua5cavo0eneih04mi3pmuc47omu7.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
