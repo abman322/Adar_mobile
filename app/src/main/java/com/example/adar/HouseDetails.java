@@ -11,7 +11,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
 
 import io.reactivex.rxjava3.annotations.NonNull;
@@ -22,6 +29,10 @@ public class HouseDetails extends AppCompatActivity {
     private TextView mDetailsHousingLocation, mDetailsHousingDescription, mDetailsHousingPrice;
     private Button mDetailsHousingBookNow, mDetailsHousingEdit,mDetailsHousingDelete;
     private LinearLayout mDetailsHousingYourHouse,mDetailsHousingNotYourHouse;
+
+    FirebaseAuth mAuth;
+    FirebaseFirestore mStore;
+    FirebaseUser mUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +48,9 @@ public class HouseDetails extends AppCompatActivity {
         mDetailsHousingPrice=findViewById(R.id.detailsHousingPrice);
         mDetailsHousingYourHouse=findViewById(R.id.detailsHousingYourHouse);
         mDetailsHousingNotYourHouse=findViewById(R.id.detailsHousingNotYourHouse);
+
+        mStore = FirebaseFirestore.getInstance();
+        mUser = FirebaseAuth.getInstance().getCurrentUser();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -61,6 +75,24 @@ public class HouseDetails extends AppCompatActivity {
                 intent.putExtra("imageUrl", data.getStringExtra("imageUrl"));
 
                 view.getContext().startActivity(intent);
+            }
+        });
+
+        mDetailsHousingDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DocumentReference documentReference = mStore.collection("houses").document(mUser.getUid()).collection("myHomes").document(data.getStringExtra("houseId"));
+                documentReference.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(getApplicationContext(), "House is Deleted.",Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@androidx.annotation.NonNull Exception e) {
+                        Toast.makeText(getApplicationContext(), "Failed to delete house.",Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 
