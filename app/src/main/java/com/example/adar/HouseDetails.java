@@ -3,6 +3,7 @@ package com.example.adar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -58,6 +59,15 @@ public class HouseDetails extends AppCompatActivity {
                 intent.putExtra("description",data.getStringExtra("description"));
                 intent.putExtra("phone",data.getStringExtra("phone"));
                 intent.putExtra("imageUrl", data.getStringExtra("imageUrl"));
+            }
+        });
+
+        mDetailsHousingBookNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                callIntent.setData(Uri.parse("tel:"+data.getStringExtra("phone")));//change the number
+                startActivity(callIntent);
             }
         });
 

@@ -77,7 +77,7 @@ public class HomeFragment extends Fragment {
                         intent.putExtra("country",model.getCountry());
                         intent.putExtra("price",model.getPrice());
                         intent.putExtra("description",model.getDescription());
-                        intent.putExtra("phone",model.getDescription());
+                        intent.putExtra("phone",model.getPhone());
                         intent.putExtra("imageUrl", model.getImageUrl());
                         intent.putExtra("isOwnHouse","false");
 
