@@ -65,11 +65,22 @@ public class HomeFragment extends Fragment {
                 holder.mHouseCardPrice.setText("$"+model.getPrice()+" / night");
                 Picasso.get().load(model.getImageUrl()).into(holder.mHouseCardImage);
 
+                String houseId = houseAdapter.getSnapshots().getSnapshot(position).getId();
+
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
 
                         Intent intent = new Intent(view.getContext(),HouseDetails.class);
+                        intent.putExtra("houseId", houseId);
+                        intent.putExtra("city", model.getCity());
+                        intent.putExtra("country",model.getCountry());
+                        intent.putExtra("price",model.getPrice());
+                        intent.putExtra("description",model.getDescription());
+                        intent.putExtra("phone",model.getDescription());
+                        intent.putExtra("imageUrl", model.getImageUrl());
+                        intent.putExtra("isOwnHouse","false");
+
                         view.getContext().startActivity(intent);
 
                     }
@@ -88,6 +99,7 @@ public class HomeFragment extends Fragment {
         mHomesRecycler = getView().findViewById(R.id.homesRecycler);
         mHomesRecycler.setHasFixedSize(true);
         mHomesRecycler.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL,false));
+        mHomesRecycler.setItemAnimator(null);
         mHomesRecycler.setAdapter(houseAdapter);
     }
 
