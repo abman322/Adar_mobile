@@ -59,6 +59,8 @@ public class HouseDetails extends AppCompatActivity {
                 intent.putExtra("description",data.getStringExtra("description"));
                 intent.putExtra("phone",data.getStringExtra("phone"));
                 intent.putExtra("imageUrl", data.getStringExtra("imageUrl"));
+
+                view.getContext().startActivity(intent);
             }
         });
 
