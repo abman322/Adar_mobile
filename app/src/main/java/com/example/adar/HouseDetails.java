@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -55,6 +56,8 @@ public class HouseDetails extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent data = getIntent();
+
+        mDetailsHousingDescription.setMovementMethod(new ScrollingMovementMethod());
 
         if(data.getStringExtra("isOwnHouse").equals("false")){
             mDetailsHousingYourHouse.setVisibility(View.GONE);
