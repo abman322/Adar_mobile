@@ -2,10 +2,10 @@
 A mobile application that lets user browse and rent affordable housing
 
 ## Team Members
-1. Abenezer Yesuf
-2. Ananiya Getinet
-3. Biruk Kalewold
-4. Liul Alemayehu
+1. Abenezer Yesuf   LP0149
+2. Ananiya Getinet  NQ4049
+3. Biruk Kalewold   PT9680
+4. Liul Alemayehu   GA9847
 
 > Note: Set phone theme to Light Mode for best visual performance
 
